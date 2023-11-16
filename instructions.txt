@@ -1,0 +1,6 @@
+1. Put public IP of router on receiving device
+2. Run wpa_passphrase command to set up the wpa_supplicant.conf file
+3. Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks
+4. Put script wirelessDD.sh on the router and note the path
+5. Alter wirelessDD.sh script to match the path of wirelssDD.sh and desired dropoff location of message.txt
+6. Alter crontab to match wirelessDD.sh and run every minute 

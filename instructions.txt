@@ -1,8 +1,14 @@
-1. Put IP of Wireless Access Point on receiving device
-2. Run wpa_passphrase command to set up the wpa_supplicant.conf file in /etc/wpa_supplicant/wpa_supplicant.conf
-3. Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks
-4. run wpa_supplicant command to connect to AP or connect via NetworkManager
-5. Double-check your wpa_supplicant.conf file to be sure it does not have any other APs configured 
-6. Put script wirelessDD.sh on the AP and note the path
-7. Alter wirelessDD.sh script to match the path of wirelssDD.sh and desired dropoff location of message.txt on target device and replace MAC address with the MAC of your target device
-8. Alter crontab to match wirelessDD.sh and run every minute 
+You will need 2 Raspberry Pis for this 
+One will be set up as w Wireless Access Point (AP). This is the one sending the file.
+The other will be set up as a regular RPi. This will be the receiving device.
+
+1. On receiving device: Run wpa_passphrase command to set up the wpa_supplicant.conf file in /etc/wpa_supplicant/wpa_supplicant.conf
+2. On receiving device: Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks
+3. On receiving device: Run wpa_supplicant command to connect to AP
+4. On receiving device: Double-check your wpa_supplicant.conf file to be sure it does not have any other APs configured 
+5. Put script digitalDD.sh on the AP and note the path
+6. Alter digitalDD.sh script to match the path of wirelssDD.sh for all commands and desired dropoff location of message.txt on receiving device
+In digitalDD.sh script, replace MAC address with the MAC of your receiving device
+7. Alter crontab on AP to match digitalDD.sh location and run every minute 
+
+Note: Test before use. You must confirm that your receiving device automatically connects to the wireless AP device for this to work.

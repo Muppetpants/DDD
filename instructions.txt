@@ -1,4 +1,4 @@
-1. Put public IP of AP on receiving device
+1. Put IP of AP on receiving device
 2. Run wpa_passphrase command to set up the wpa_supplicant.conf file
 3. Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks
 4. run wpa_supplicant command to connect to AP or connect via NetworkManager

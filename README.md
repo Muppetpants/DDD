@@ -11,7 +11,7 @@ sudo sh -c "wpa_passphrse '<SSID>' '<passphrase>' > /etc/wpa_supplicant/wpa_supp
 
 
 ```
-tbd...
+TBD...
 1. On receiving device: Run wpa_passphrase command to set up the wpa_supplicant.conf file in /etc/wpa_supplicant/wpa_supplicant.conf
 2. On receiving device: Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks
 3. On receiving device: Run wpa_supplicant command to connect to AP

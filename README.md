@@ -7,10 +7,21 @@ Requirements:
 On Receiving device:
 ```bash
 # Set-up wpa_supplicant.conf with AP settings
+sudo mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.bak
 sudo sh -c "wpa_passphrse '<SSID>' '<passphrase>' > /etc/wpa_supplicant/wpa_supplicant.conf"
-
-
 ```
+```bash
+# Purge previous Network Manager connections
+sudo rm /etc/NetworkManager/system-connections
+```
+```bash
+# Run wpa_supplicant
+sudo wpa_supplicant -B -i <adapter> -c /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+
+
+
 TBD...
 1. On receiving device: Run wpa_passphrase command to set up the wpa_supplicant.conf file in /etc/wpa_supplicant/wpa_supplicant.conf
 2. On receiving device: Check /etc/NetworkManager/system-connections and delete all files named after any incorrect wifi networks

@@ -5,17 +5,19 @@ Requirements:
 - The other as the AP/Server
 
 On Receiving device:
+
+Set-up wpa_supplicant.conf with AP settings
 ```bash
-# Set-up wpa_supplicant.conf with AP settings
 sudo mv /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.bak
 sudo sh -c "wpa_passphrse '<SSID>' '<passphrase>' > /etc/wpa_supplicant/wpa_supplicant.conf"
 ```
+Purge previous Network Manager connections
 ```bash
-# Purge previous Network Manager connections
 sudo rm /etc/NetworkManager/system-connections
 ```
+Run wpa_supplicant
 ```bash
-# Run wpa_supplicant
+
 sudo wpa_supplicant -B -i <adapter> -c /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
